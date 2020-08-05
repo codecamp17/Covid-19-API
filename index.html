@@ -1,0 +1,13 @@
+<div ng-app="CovidSearch">
+  <div ng-controller="CovidCtrl">
+  <input type="search" ng-model="query" ng-keyup="onKeyupSearch()" placeholder="Search for country wise covid-19" style="width: 100%;"/>
+  <ul ng-repeat="result in results">
+    <li style="list-style: none">
+      <h3>{{result.todayCases}}</h3>
+      <h4>{{result.deaths}}</h4>
+    </li>
+  </ul>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-resource.min.js"></script>
+  </div>
+  </div>
