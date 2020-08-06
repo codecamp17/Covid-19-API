@@ -1,13 +1,26 @@
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-resource.min.js"></script>
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
 <div ng-app="CovidSearch">
   <div ng-controller="CovidCtrl">
-  <input type="search" ng-model="query" ng-keyup="onKeyupSearch()" placeholder="Search for country wise covid-19" style="width: 100%;"/>
-  <ul ng-repeat="result in results">
-    <li style="list-style: none">
-      <h3>{{result.todayCases}}</h3>
-      <h4>{{result.deaths}}</h4>
-    </li>
-  </ul>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-resource.min.js"></script>
+  <button ng-model="query" ng-click="onKeyupSearch()">Enter for data</button>
+      <nav class="grid">
+        <li class="col-space" >Country</li>
+        <li class="col-space" >Active Cases</li>
+        <li class="col-double-space">Deaths</li>
+        <li class="col-space">Recovered</li>
+      </nav>
+      <section class="grid" ng-repeat="result in results">
+        <div class="patient">
+          <span class="col-space">{{ result.country }}</span>
+          <span class="col-space">{{ result.cases }}</span>
+          <span class="col-double-space">{{ result.deaths }}</span>
+          <span class="col-space">{{ result.recovered }}</span>
+        </div>
+      </section>
+    </div>
+  <script src="app.js"></script> 
   </div>
   </div>
